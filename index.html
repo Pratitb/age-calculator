@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+			rel="stylesheet" />
+		<!-- css -->
+		<link rel="stylesheet" href="app.css" />
+		<title>Age Calculator</title>
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<div class="age_calc_wrap">
+					<!-- input section -->
+					<div class="input_box">
+						<!-- input wrap -->
+						<div class="input_wrap">
+							<p class="input_label">day</p>
+							<input type="number" class="common_input day" id="day" placeholder="DD" />
+                            <span class="error hide_err"></span>
+						</div>
+						<!-- input wrap -->
+						<div class="input_wrap">
+							<p class="input_label">month</p>
+							<input type="number" class="common_input month" id="month" placeholder="MM" />
+                            <span class="error hide_err"></span>
+						</div>
+						<!-- input wrap -->
+						<div class="input_wrap year_wrap">
+							<p class="input_label">year</p>
+							<input type="number" class="common_input year" id="year" placeholder="YYYY" />
+                            <span class="error hide_err"></span>
+						</div>
+					</div>
+					<!-- calculate button -->
+					<div class="calculate_age">
+                        <div class="separation_line"></div>
+                        <div class="calculate_btn disabled">&downarrow;</div>
+                    </div>
+                    <!-- final value age -->
+                    <div class="final_value">
+                        <p class="age"><span class="age_num years">--</span>&nbsp;years</p>
+                        <p class="age"><span class="age_num months">--</span>&nbsp;months</p>
+                        <p class="age"><span class="age_num days">---</span>&nbsp;days</p>
+                    </div>
+                    <!-- reset app -->
+                    <div class="reset_app_btn">&orarr;</div>
+				</div>
+			</div>
+		</main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
