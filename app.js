@@ -22,32 +22,26 @@ $(document).ready(function () {
 			$(currentElement).addClass('red_border').removeClass('green_border');
 			$(currentElement).next().html(`Must be < ${num}`);
 			$(currentElement).next().removeClass('hide_err').addClass('show_err');
+		} else if ($(currentElement).val() == '') {
+			$(currentElement).next().addClass('hide_err').removeClass('show_err');
+			$(currentElement).removeClass('green_border');
 		} else {
 			$(currentElement).removeClass('red_border').addClass('green_border');
 			$(currentElement).next().html('');
 			$(currentElement).next().addClass('hide_err').removeClass('show_err');
 		}
 	}
-	(function checkInputGreen() {
-		let isGreen = false;
-        let allInputsObject = $('.common_input');
-        let allInputsArr = [...allInputsObject]
-        console.log(allInputsArr);
-		setInterval(() => {
-			allInputsArr.every((input) => {
-				if (input.classList.contains('green_border')) {
-					isGreen = true;
-				} else {
-					isGreen = false;
-				}
-			});
-			if (isGreen) {
-				$('.calculate_btn').removeClass('disabled');
-			} else {
-				$('.calculate_btn').addClass('disabled');
-			}
-		}, 1000);
-	})();
+	setInterval(() => {
+		const isAllFilled = $('.common_input').filter(function() {
+			return $(this).val() === '';
+		}).length === 0;
+		
+		if (isAllFilled) {
+			$('.calculate_btn').removeClass('disabled');
+		} else {
+			$('.calculate_btn').addClass('disabled');
+		}
+	}, 1000);
 	function getAge() {
 		let inputYear = $('#year').val();
 		let inputMonth = $('#month').val();
@@ -93,9 +87,11 @@ $(document).ready(function () {
 	function resetApp() {
 		$('.days, .months, .years').html('--');
 		$('.calculate_btn').addClass('disabled');
-		$('#day, #month, #year').removeClass('green_border');
+		$('.error').removeClass('show_err').addClass('hide_err');
+		$('#day, #month, #year').removeClass('green_border red_border');
 		$('#day, #month, #year').val('');
 		$('#day').focus();
+		$('.app_head').html('How old am I?');
 	}
 
 	$('#day').on('keyup', function (event1) {
