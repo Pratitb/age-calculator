@@ -10,6 +10,7 @@
 body {
 	font-family: 'Poppins', sans-serif;
 }
+
 /* main */
 main{
     min-height: 100vh;
@@ -66,24 +67,11 @@ main{
     text-transform: uppercase;
     color: #868686;
 }
-/* active classes */
 .error{
     min-height: 17px;
     font-size: 10px;
     margin: 5px 0 0;
     color: #EF5350;
-}
-.hide_err{
-    visibility: hidden;
-}
-.show_err{
-    visibility: visible;
-}
-.red_border:focus-visible{
-    border: 1px solid #EF5350;
-}
-.green_border, .green_border:focus-visible{
-    border: 1px solid #81C784;
 }
 
 /* calculate age */
@@ -156,6 +144,20 @@ main{
     100%{
         transform: scale(1);
     }
+}
+
+/* active classes */
+.hide_err{
+    visibility: hidden;
+}
+.show_err{
+    visibility: visible;
+}
+.red_border:focus-visible{
+    border: 1px solid #EF5350;
+}
+.green_border, .green_border:focus-visible{
+    border: 1px solid #81C784;
 }
 
 /* responsive */
