@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#day').focus()
+	$('#day').focus();
 	// get current date
 	const currentDate = new Date();
 	const currentYear = currentDate.getFullYear();
@@ -12,7 +12,7 @@ $(document).ready(function () {
 	if (currentDay < 10) {
 		currentDay = `0${currentDay}`;
 	}
-    // ---------------------------------------------------
+	// ---------------------------------------------------
 	// ------------------------------------------------------
 	function checkInputValue(event1, num) {
 		const currentElement = event1.target;
@@ -30,9 +30,12 @@ $(document).ready(function () {
 	}
 	(function checkInputGreen() {
 		let isGreen = false;
+        let allInputsObject = $('.common_input');
+        let allInputsArr = [...allInputsObject]
+        console.log(allInputsArr);
 		setInterval(() => {
-			$('.common_input').each(function () {
-				if ($(this).hasClass('green_border')) {
+			allInputsArr.every((input) => {
+				if (input.classList.contains('green_border')) {
 					isGreen = true;
 				} else {
 					isGreen = false;
@@ -53,26 +56,47 @@ $(document).ready(function () {
 		let dateDiffInMilliSecs = currentDate - inputDate;
 
 		// years---------------------
-		let dateDiffInYears = Math.floor(dateDiffInMilliSecs / (1000 * 60 * 60 * 24 * 365.25));
+		let dateDiffInYears = Math.floor(
+			dateDiffInMilliSecs / (1000 * 60 * 60 * 24 * 365.25)
+		);
 		$('.years').html(dateDiffInYears);
 
 		// months-------------------
-		let remainingSecondsForMonths = dateDiffInMilliSecs % (1000 * 60 * 60 * 24 * 365.25);
-		let dateDiffInMonths = Math.floor(remainingSecondsForMonths / (1000 * 60 * 60 * 24 * 30.4375));
+		let remainingSecondsForMonths =
+			dateDiffInMilliSecs % (1000 * 60 * 60 * 24 * 365.25);
+		let dateDiffInMonths = Math.floor(
+			remainingSecondsForMonths / (1000 * 60 * 60 * 24 * 30.4375)
+		);
 		$('.months').html(dateDiffInMonths);
 
 		// days-------------------
-		let remainingSecondsForDays = remainingSecondsForMonths % (1000 * 60 * 60 * 24 * 30.4375);
-		let dateDiffInDays = Math.floor(remainingSecondsForDays / (1000 * 60 * 60 * 24));
+		let remainingSecondsForDays =
+			remainingSecondsForMonths % (1000 * 60 * 60 * 24 * 30.4375);
+		let dateDiffInDays = Math.floor(
+			remainingSecondsForDays / (1000 * 60 * 60 * 24)
+		);
 		$('.days').html(dateDiffInDays);
 	}
-    function resetApp(){
-        $('.days, .months, .years').html('--')
-        $('.calculate_btn').addClass('disabled')
-        $('#day, #month, #year').removeClass('green_border')
-        $('#day, #month, #year').val('')
-        $('#day').focus()
-    }
+	function changeAppHead() {
+		let userAge = +$('.years').text();
+		// console.log(userAge);
+		if (userAge < 30) {
+			$('.app_head').html(
+				`You're just ${userAge}, <span class="age_cate_one">do what you love!</span>`
+			);
+		} else {
+			$('.app_head').html(
+				`You're ${userAge}, <span class="age_cate_one">spend time with your family!</span>`
+			);
+		}
+	}
+	function resetApp() {
+		$('.days, .months, .years').html('--');
+		$('.calculate_btn').addClass('disabled');
+		$('#day, #month, #year').removeClass('green_border');
+		$('#day, #month, #year').val('');
+		$('#day').focus();
+	}
 
 	$('#day').on('keyup', function (event1) {
 		checkInputValue(event1, 32);
@@ -85,6 +109,7 @@ $(document).ready(function () {
 	});
 	$('.calculate_btn').on('click', function () {
 		getAge();
+		changeAppHead();
 	});
-    $('.reset_app_btn').on('click', resetApp);
+	$('.reset_app_btn').on('click', resetApp);
 });
