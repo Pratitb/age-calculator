@@ -33,13 +33,13 @@ main{
 .input_box{
     display: flex;
     justify-content: space-between;
-    gap: 0 15px;
+    gap: 0;
     max-width: 100%;
 }
 .input_wrap{
     display: flex;
     flex-direction: column;
-    max-width: 30%;
+    max-width: 32%;
 }
 .common_input{
     height: 45px;
