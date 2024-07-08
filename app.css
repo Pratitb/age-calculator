@@ -121,18 +121,18 @@ main{
     transition: all 0.3s;
     border-radius: 50%;
     line-height: 1;
-    right: 50px;
-    bottom: 35px;
-    font-size: 32px;
+    right: 45px;
+    bottom: 50px;
+    font-size: 28px;
     font-weight: 800;
 }
 .reset_app_btn:hover::before{
     content: '';
     position: absolute;
-    left: -18px;
-    top: -7px;
-    width: 60px;
-    height: 60px;
+    left: -14px;
+    top: -6px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: rgba(31, 33, 35, 0.04);
     animation: scaleUpBg  0.1s linear;
@@ -176,6 +176,9 @@ main{
         font-size: 45px;
         line-height: 58px;
     }
+    .reset_app_btn{
+        right: 60px;
+    }
 }
 @media screen and (min-width: 768px){
     .age_calc_wrap{
@@ -203,5 +206,10 @@ main{
         font-size: 40px;
         right: 100px;
         bottom: 50px;
+    }
+    .reset_app_btn:hover::before{
+        width: 60px;
+        height: 60px;
+        left: -18px;
     }
 }
