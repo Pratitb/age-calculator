@@ -3,19 +3,19 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-:root{
-    --lightGrey: #EBEAEA;
-    --main-purple: #854dff;
+:root {
+	--lightGrey: #ebeaea;
+	--main-purple: #854dff;
 }
 body {
 	font-family: 'Poppins', sans-serif;
 }
 
 /* main */
-main{
-    min-height: 100vh;
-    padding: 50px 0;
-    background-color: #F0F0F0;
+main {
+	min-height: 100vh;
+	padding: 50px 0;
+	background-color: #f0f0f0;
 }
 .container {
 	width: 100%;
@@ -23,193 +23,191 @@ main{
 	margin: 0 auto;
 	padding: 0 20px;
 }
-.age_calc_wrap{
-    position: relative;
-    padding: 40px 20px;
-    border-radius: 20px;
-    border-bottom-right-radius: 30%;
-    background-color: #fff;
+.age_calc_wrap {
+	position: relative;
+	padding: 40px 20px;
+	border-radius: 20px;
+	border-bottom-right-radius: 30%;
+	background-color: #fff;
 }
-.input_box{
-    display: flex;
-    justify-content: space-between;
-    gap: 0;
-    max-width: 100%;
+.input_box {
+	display: flex;
+	justify-content: space-between;
+	gap: 0;
+	max-width: 100%;
 }
-.input_wrap{
-    display: flex;
-    flex-direction: column;
-    max-width: 32%;
+.input_wrap {
+	display: flex;
+	flex-direction: column;
+	max-width: 32%;
 }
-.common_input{
-    height: 45px;
-    padding: 10px;
-    font-weight: 800;
-    font-size: 18px;
-    /* border-color: #868686; */
-    border: 1px solid var(--lightGrey);
-    border-radius: 8px;
-    outline: none;
+.common_input {
+	height: 45px;
+	padding: 10px;
+	font-weight: 800;
+	font-size: 18px;
+	/* border-color: #868686; */
+	border: 1px solid var(--lightGrey);
+	border-radius: 8px;
+	outline: none;
 }
-.common_input::placeholder{
-    font-size: 14px;
+.common_input::placeholder {
+	font-size: 14px;
 }
-.common_input:focus-visible{
-    border: solid 1px var(--main-purple);
+.common_input:focus-visible {
+	border: solid 1px var(--main-purple);
 }
-.common_input::-webkit-outer-spin-button, .common_input::-webkit-inner-spin-button{
-    appearance: none;
+.common_input::-webkit-outer-spin-button,
+.common_input::-webkit-inner-spin-button {
+	appearance: none;
 }
-.input_label{
-    font-size: 11px;
-    margin: 0 0 5px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #868686;
+.input_label {
+	font-size: 11px;
+	margin: 0 0 5px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #868686;
 }
-.error{
-    min-height: 17px;
-    font-size: 10px;
-    margin: 5px 0 0;
-    color: #EF5350;
+.error {
+	min-height: 17px;
+	font-size: 10px;
+	margin: 5px 0 0;
+	color: #ef5350;
 }
 
 /* calculate age */
-.calculate_age{
-    position: relative;
-    margin: 40px 0;
+.calculate_age {
+	position: relative;
+	margin: 40px 0;
 }
-.separation_line{
-    height: 2px;
-    background-color: var(--lightGrey);
+.separation_line {
+	height: 2px;
+	background-color: var(--lightGrey);
 }
-.calculate_btn{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -24px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
-    transition: all 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #fff;
-    background-color: var(--main-purple);
+.calculate_btn {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -24px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 24px;
+	transition: all 0.3s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: #fff;
+	background-color: var(--main-purple);
 }
-.calculate_btn:hover{
-    background-color: #5933ae;
+.calculate_btn:hover {
+	background-color: #5933ae;
 }
-.disabled{
-    pointer-events: none;
-    filter: grayscale(1);
+.disabled {
+	pointer-events: none;
+	filter: grayscale(1);
 }
-.age{
-    font-size: 40px;
-    font-style: italic;
-    font-weight: 800;
+.age {
+	font-size: 40px;
+	font-style: italic;
+	font-weight: 800;
 }
-.age_num{
-    color: var(--main-purple);
+.age_num {
+	color: var(--main-purple);
 }
-.reset_app_btn{
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 50%;
-    line-height: 1;
-    right: 45px;
-    bottom: 50px;
-    font-size: 28px;
-    font-weight: 800;
-}
-.reset_app_btn:hover::before{
-    content: '';
-    position: absolute;
-    left: -14px;
-    top: -6px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: rgba(31, 33, 35, 0.04);
-    animation: scaleUpBg  0.1s linear;
-}
-@keyframes scaleUpBg {
-    0%{
-        transform: scale(0.5);
-    }
-    100%{
-        transform: scale(1);
-    }
+.reset_app_btn {
+	position: absolute;
+	cursor: pointer;
+	transition: all 0.3s;
+	border-radius: 50%;
+	line-height: 1;
+	right: 45px;
+	bottom: 50px;
+	font-size: 28px;
+	font-weight: 800;
 }
 
 /* active classes */
-.hide_err{
-    visibility: hidden;
+.hide_err {
+	visibility: hidden;
 }
-.show_err{
-    visibility: visible;
+.show_err {
+	visibility: visible;
 }
-.red_border:focus-visible{
-    border: 1px solid #EF5350;
+.red_border:focus-visible {
+	border: 1px solid #ef5350;
 }
-.green_border, .green_border:focus-visible{
-    border: 1px solid #81C784;
+.green_border,
+.green_border:focus-visible {
+	border: 1px solid #81c784;
 }
 
 /* responsive */
-@media screen and (min-width: 375px){
-    .common_input, .common_input::placeholder{
-        font-size: 20px;
-    }
-    .calculate_age{
-        margin: 40px 0 50px;
-    }
-    .calculate_btn{
-        width: 60px;
-        height: 60px;
-    }
-    .age{
-        font-size: 45px;
-        line-height: 58px;
-    }
-    .reset_app_btn{
-        right: 60px;
-    }
+@media screen and (min-width: 375px) {
+	.common_input,
+	.common_input::placeholder {
+		font-size: 20px;
+	}
+	.calculate_age {
+		margin: 40px 0 50px;
+	}
+	.calculate_btn {
+		width: 60px;
+		height: 60px;
+	}
+	.age {
+		font-size: 45px;
+		line-height: 58px;
+	}
+	.reset_app_btn {
+		right: 60px;
+	}
 }
-@media screen and (min-width: 768px){
-    .age_calc_wrap{
-        max-width: 550px;
-        margin: 0 auto;
-    }
-    .common_input{
-        font-size: 26px;
-        height: 50px;
-    }
-    .error{
-        font-size: 12px;
-    }
-    .calculate_btn{
-        left: initial;
-        transform: translateX(-20px);
-        top: -30px;
-        right: 0;
-    }
-    .age{
-        font-size: 75px;
-        line-height: 88px;
-    }
-    .reset_app_btn{
-        font-size: 40px;
-        right: 100px;
-        bottom: 50px;
-    }
-    .reset_app_btn:hover::before{
-        width: 60px;
-        height: 60px;
-        left: -18px;
-    }
+@media screen and (min-width: 768px) {
+	.age_calc_wrap {
+		max-width: 550px;
+		margin: 0 auto;
+	}
+	.common_input {
+		font-size: 26px;
+		height: 50px;
+	}
+	.error {
+		font-size: 12px;
+	}
+	.calculate_btn {
+		left: initial;
+		transform: translateX(-20px);
+		top: -30px;
+		right: 0;
+	}
+	.age {
+		font-size: 75px;
+		line-height: 88px;
+	}
+	.reset_app_btn {
+		font-size: 40px;
+		right: 100px;
+		bottom: 50px;
+	}
+	.reset_app_btn:hover::before {
+		content: '';
+		position: absolute;
+		left: -18px;
+		top: -6px;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: rgba(31, 33, 35, 0.04);
+		animation: scaleUpBg 0.1s linear;
+	}
+	@keyframes scaleUpBg {
+		0% {
+			transform: scale(0.5);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
 }
